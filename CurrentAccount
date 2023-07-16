@@ -1,0 +1,22 @@
+package com.byla.model;
+
+class CurrentAccount extends Account{
+    private double overDraftLimit;
+    public CurrentAccount(int accountNo,String openedDate,double balance,double overDraftLimit){
+        
+        this.overDraftLimit = overDraftLimit;
+    }
+    
+    public void setOverDraftLimit(double overDraftLimit){
+        this.overDraftLimit=overDraftLimit;
+    }
+    
+    public double getOverDraftLimit(){
+        return overDraftLimit;
+    }
+    
+    public double UpdatedBalance(){
+        return (getBalance()+getOverDraftLimit());
+    }
+    
+}
